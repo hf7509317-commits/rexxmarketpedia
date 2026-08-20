@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="REXX MARKET DIGITAL — Digital service and automated order">
+  <title>REXX MARKET DIGITAL</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="header">
+    <div class="brand-wrap">
+      <img id="storeProfile" class="profile" src="/assets/store-profile.jpg" alt="Profil REXX MARKET DIGITAL">
+      <div>
+        <div class="brand" id="storeName">REXX MARKET DIGITAL</div>
+        <div class="tagline" id="storeTagline">DIGITAL SERVICE & AUTOMATED ORDER</div>
+      </div>
+    </div>
+    <button class="cart-button" id="cartButton">ORDER <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="scanline"></div>
+      <div class="hero-copy">
+        <div class="eyebrow">REXX MARKET DIGITAL</div>
+        <h1>AUTOMATED DIGITAL ORDER</h1>
+        <p>ORDER CEPAT. PEMBAYARAN QRIS. NOTIFIKASI TRANSAKSI OTOMATIS.</p>
+        <a href="#products" class="hero-button">LIHAT PRODUK</a>
+      </div>
+      <div class="orbit"><span></span><span></span><span></span></div>
+      <div class="hero-core">REXX</div>
+    </section>
+
+    <section class="welcome panel">
+      <div>
+        <div class="panel-title">REXX MARKET DIGITAL</div>
+        <p id="storeDescription">Marketplace digital dengan proses order cepat dan pembayaran QRIS.</p>
+      </div>
+      <div class="status">SYSTEM ONLINE</div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">CATALOG</div>
+          <h2>PRODUK TERSEDIA</h2>
+        </div>
+        <input id="search" class="search" placeholder="CARI PRODUK...">
+      </div>
+      <div id="categoryTabs" class="tabs"></div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <div id="orderModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" data-close="orderModal">×</button>
+      <div class="section-kicker">DATA PEMBELI</div>
+      <h2 id="selectedProduct">ORDER PRODUK</h2>
+      <form id="orderForm">
+        <input type="hidden" id="productId">
+        <label>NAMA LENGKAP<input id="name" maxlength="100" autocomplete="name"></label>
+        <label>GMAIL / EMAIL<input id="email" type="email" maxlength="160" required autocomplete="email"></label>
+        <label>USERNAME<input id="username" maxlength="80" required autocomplete="username"></label>
+        <label>NOMOR TELEPON<input id="phone" maxlength="30" autocomplete="tel"></label>
+        <label>CATATAN<input id="note" maxlength="300" placeholder="Opsional"></label>
+        <button class="primary" type="submit">LANJUT KE PEMBAYARAN</button>
+      </form>
+      <div id="formError" class="error"></div>
+    </div>
+  </div>
+
+  <div id="paymentModal" class="modal hidden">
+    <div class="modal-card payment-card">
+      <button class="modal-close" data-close="paymentModal">×</button>
+      <div class="section-kicker">PEMBAYARAN QRIS</div>
+      <h2 id="paymentProduct">MENUNGGU PEMBAYARAN</h2>
+      <div class="invoice">ORDER ID <strong id="orderId">-</strong></div>
+      <div class="qr-wrap"><img id="qrImage" alt="QRIS pembayaran"></div>
+      <div class="payment-total" id="paymentTotal">Rp0</div>
+      <div class="expiry">BERLAKU SAMPAI <span id="expiry">-</span></div>
+      <div id="paymentStatus" class="payment-status">MENUNGGU PEMBAYARAN</div>
+      <p class="payment-note">Setelah pembayaran berhasil, sistem akan memeriksa transaksi dan mengirim notifikasi transaksi ke Telegram toko.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <footer class="footer">
+    <div class="footer-brand">REXX MARKET DIGITAL</div>
+    <div>DIGITAL • SECURE • FAST</div>
+  </footer>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
